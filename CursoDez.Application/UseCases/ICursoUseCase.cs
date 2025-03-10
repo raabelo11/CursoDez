@@ -5,5 +5,6 @@ namespace CursoDez.Application.UseCases
     public interface ICursoUseCase
     {
         Task<List<CursoDTO>> GetCursos(int idCurso);
+        Task<bool> CreateCurso(CursoDTO curso);
     }
 }

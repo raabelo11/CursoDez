@@ -1,4 +1,5 @@
-﻿using CursoDez.Application.Interfaces;
+﻿using CursoDez.Application.DTOs;
+using CursoDez.Application.Interfaces;
 using CursoDez.Domain.Models;
 using CursoDez.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
@@ -39,6 +40,31 @@ namespace CursoDez.Infrastructure.Repositories
             {
                 throw new Exception($"Erro encontrado: {ex.Message}");
             }
+        }
+
+        public async Task<bool> CreateCursoAsync(CursoDTO curso)
+        {
+            bool retorno = false;
+
+            try
+            {
+                Curso cursoBase = new() {
+                    NomeCurso = curso.Nome,
+                    Categoria = curso.CategoriaCurso,
+                    Ativo = curso.CursoAtivo
+                };
+
+                await _context.Cursos.AddAsync(cursoBase);
+                await _context.SaveChangesAsync();
+
+                retorno = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao inserir o curso na base: {ex.Message}, {ex.InnerException}");
+            }
+
+            return retorno;
         }
     }
 }

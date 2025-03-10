@@ -14,9 +14,9 @@ namespace CursoDez.Infrastructure.Configuration
             builder.Property(a => a.Idade).IsRequired().HasColumnType("int").HasColumnName("Idade");
             builder.Property(a => a.IdCurso).IsRequired().HasColumnType("int").HasColumnName("IdCurso");
             builder.Property(a => a.MatriculaAtiva).IsRequired().HasColumnType("bit").HasColumnName("MatriculaAtiva");
-            builder.Property(a => a.StatusPagamento).HasConversion<int>().HasColumnType("int").IsRequired();
-            builder.Property(a => a.DataMatricula).HasColumnType("datetime").IsRequired();
-            builder.Property(a => a.DataVigenciaCurso).HasColumnType("datetime").IsRequired();
+            builder.Property(a => a.StatusPagamento).HasConversion<int>().HasColumnName("StatusPagamentoId");
+            builder.Property(a => a.DataMatricula).HasColumnType("datetime").IsRequired().HasColumnName("DataMatricula");
+            builder.Property(a => a.DataVigenciaCurso).HasColumnType("datetime").IsRequired().HasColumnName("DataVigenciaCurso");
         }
     }
 }

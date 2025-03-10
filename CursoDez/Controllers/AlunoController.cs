@@ -1,22 +1,33 @@
-﻿using CursoDez.Infrastructure.Context;
+﻿using CursoDez.Application.DTOs;
+using CursoDez.Application.UseCases;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CursoDez.API.Controllers
 {
+    [Authorize]
     [Route("api/v1/[controller]")]
     [ApiController]
     public class AlunoController : Controller
     {
-        private readonly CursoDezContextSQLServer _context;
-        public AlunoController(CursoDezContextSQLServer context)
+        private readonly IAlunoUseCase _alunoUseCase;
+        private readonly ILogger<AlunoController> _logger;
+
+        public AlunoController(IAlunoUseCase alunoUseCase, ILogger<AlunoController> logger)
         {
-            _context = context;
+            _alunoUseCase = alunoUseCase;
+            _logger = logger;
         }
 
-        [HttpGet]
-        public IActionResult GetAlunos()
+        [HttpPost]
+        [Route("alunos-matricula")]
+        public async Task<IActionResult> PostAluno([FromBody] AlunoDTO alunoDTO)
         {
-            return Ok();
+            var ret = await _alunoUseCase.CreateMatricula(alunoDTO);
+            if (!ret)
+                return BadRequest("Erro ao criar matrícula do aluno !");
+
+            return Ok("Matrícula criada com sucesso!");
         }
     }
 }
