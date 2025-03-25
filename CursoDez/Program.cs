@@ -40,7 +40,7 @@ else if (dbConfig.GetValue<int>("DatabaseType") == 2)
 }
 
 // Recupera a chave secreta ou o endpoint do provedor de autenticação, se necessário.
-var secretKey = Environment.GetEnvironmentVariable("JWT_SECRET_KEY");
+var secretKey = "super_secret_key_1234567890123456";
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
