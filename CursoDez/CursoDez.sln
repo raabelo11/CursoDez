@@ -19,13 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoDez.Domain", "..\Curso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoDez.Infrastructure", "..\CursoDez.Infrastructure\CursoDez.Infrastructure.csproj", "{92562564-C59D-489A-ADB4-A734FD61ADCD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CursoDez.Tests", "CursoDez.Tests", "{66EB2D10-2442-4752-BAA3-1E060D34E001}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoDez.Tests", "..\CursoDez.Tests\CursoDez.Tests.csproj", "{EDFC822F-0F7E-4593-843D-706A7D7DDE27}"
-	ProjectSection(ProjectDependencies) = postProject
-		{0AE2C958-AC85-41FE-B447-E8D07227642C} = {0AE2C958-AC85-41FE-B447-E8D07227642C}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,10 +41,6 @@ Global
 		{92562564-C59D-489A-ADB4-A734FD61ADCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92562564-C59D-489A-ADB4-A734FD61ADCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92562564-C59D-489A-ADB4-A734FD61ADCD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EDFC822F-0F7E-4593-843D-706A7D7DDE27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDFC822F-0F7E-4593-843D-706A7D7DDE27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EDFC822F-0F7E-4593-843D-706A7D7DDE27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDFC822F-0F7E-4593-843D-706A7D7DDE27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,7 +50,6 @@ Global
 		{FF0E8466-7B56-4A96-B9D7-E7966885D765} = {935A6684-7B9A-44AD-818D-7706153EB179}
 		{276808D3-E135-42C8-A322-D469D997147A} = {9AF26313-5D8E-4DCA-915C-E93D653D9F29}
 		{92562564-C59D-489A-ADB4-A734FD61ADCD} = {5E766BD8-B6C2-462D-9DFB-5F2C8183EF4E}
-		{EDFC822F-0F7E-4593-843D-706A7D7DDE27} = {66EB2D10-2442-4752-BAA3-1E060D34E001}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFE7334C-6A5B-47EA-914A-8EA73555B68A}
