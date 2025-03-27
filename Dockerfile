@@ -27,6 +27,9 @@ WORKDIR /app
 # Copiar os artefatos de build da etapa anterior
 COPY --from=build /app/publish .
 
+# Definir a variável de ambiente para a porta que a aplicação vai escutar
+ENV ASPNETCORE_URLS=http://+:80
+
 # Expor a porta que a aplicação vai rodar
 EXPOSE 80
 
